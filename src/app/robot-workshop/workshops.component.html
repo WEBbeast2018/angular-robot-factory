@@ -1,0 +1,37 @@
+<h2>My Heroes</h2>
+<ul class="workshops">
+  <li *ngFor="let workshop of workshops"
+      [class.selected]="workshop === selectedWorkshop"
+      (click)="onSelect(workshop)">
+    <span class="badge">{{workshop.id}}</span> {{workshop.branchName}}
+  </li>
+</ul>
+
+<div *ngIf="selectedWorkshop">
+  <h2>{{ selectedWorkshop.branchName | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{selectedWorkshop.id}}
+  </div>
+
+  <div>
+    <label>Branch name:
+      <input [(ngModel)]="selectedWorkshop.branchName" placeholder="branch name">
+    </label>
+  </div>
+
+  <div>
+    <label>Manager name:
+      <input [(ngModel)]="selectedWorkshop.managerName" placeholder="manager name">
+    </label>
+  </div>
+
+  <div>
+    <label>Number of employees:
+      <input [(ngModel)]="selectedWorkshop.employees" type="number">
+    </label>
+  </div>
+
+  <div>
+    <span>City: </span>{{selectedWorkshop.city}}
+  </div>
+</div>
