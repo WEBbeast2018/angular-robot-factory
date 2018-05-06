@@ -3,14 +3,13 @@ import { Workshop } from '../Workshop';
 import { WORKSHOPS } from '../mock-workshops';
 
 @Component({
-  selector: 'app-robot-workshop',
+  selector: 'app-workshops',
   templateUrl: './workshops.component.html',
   styleUrls: ['./workshops.component.css']
 })
 export class WorkshopsComponent implements OnInit {
-  workshops = WORKSHOPS;
   selectedWorkshop: Workshop;
-
+  workshops = WORKSHOPS;
 
   constructor() { }
 

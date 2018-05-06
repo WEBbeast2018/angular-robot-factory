@@ -1,0 +1,29 @@
+
+<div *ngIf="workshop">
+  <h2>{{ workshop.branchName | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{workshop.id}}
+  </div>
+
+  <div>
+    <label>Branch name:
+      <input [(ngModel)]="workshop.branchName" placeholder="branch name">
+    </label>
+  </div>
+
+  <div>
+    <label>Manager name:
+      <input [(ngModel)]="workshop.managerName" placeholder="manager name">
+    </label>
+  </div>
+
+  <div>
+    <label>Number of employees:
+      <input [(ngModel)]="workshop.employees" type="number">
+    </label>
+  </div>
+
+  <div>
+    <span>City: </span>{{workshop.city}}
+  </div>
+</div>
