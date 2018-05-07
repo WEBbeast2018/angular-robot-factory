@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Workshop } from '../Workshop';
-import { WORKSHOPS } from '../mock-workshops';
+import { WorkshopsService } from '../workshops.service';
 
 @Component({
   selector: 'app-workshops',
@@ -8,15 +7,16 @@ import { WORKSHOPS } from '../mock-workshops';
   styleUrls: ['./workshops.component.css']
 })
 export class WorkshopsComponent implements OnInit {
-  selectedWorkshop: Workshop;
-  workshops = WORKSHOPS;
+  workshops;
 
-  constructor() { }
+  constructor(private workshopsService: WorkshopsService) { }
 
   ngOnInit() {
+    this.getWorkshops();
   }
 
-  onSelect(workshop: Workshop): void {
-      this.selectedWorkshop = workshop;
+  getWorkshops(): void {
+    this.workshopsService.getWorkshops()
+      .subscribe(workshops  => this.workshops = workshops);
   }
 }

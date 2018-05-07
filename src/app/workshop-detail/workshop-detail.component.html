@@ -6,6 +6,10 @@
   </div>
 
   <div>
+    <span>City: </span>{{workshop.city}}
+  </div>
+
+  <div>
     <label>Branch name:
       <input [(ngModel)]="workshop.branchName" placeholder="branch name">
     </label>
@@ -23,7 +27,6 @@
     </label>
   </div>
 
-  <div>
-    <span>City: </span>{{workshop.city}}
-  </div>
+  <button (click)="goBack()">go back</button>
+
 </div>

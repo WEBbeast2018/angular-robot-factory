@@ -1,10 +1,8 @@
 <h2>My Workshops</h2>
 <ul class="workshops">
-  <li *ngFor="let workshop of workshops"
-      [class.selected]="workshop === selectedWorkshop"
-      (click)="onSelect(workshop)">
-    <span class="badge">{{workshop.id}}</span> {{workshop.branchName}}
+  <li *ngFor="let workshop of workshops">
+    <a routerLink="/detail/{{workshop.id}}">
+      <span class="badge">{{workshop.id}}</span>{{workshop.branchName}}
+    </a>
   </li>
 </ul>
-
-<app-workshop-detail [workshop]=selectedWorkshop></app-workshop-detail>
